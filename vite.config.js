@@ -1,9 +1,14 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import voie from 'vite-plugin-voie'
+import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), voie()],
+  plugins: [vue()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, '/src')
+    }
+  },
   //https://vitejs.dev/config/#server-proxy
   server: {
     proxy: {
@@ -12,7 +17,7 @@ export default defineConfig({
         target: 'http://localhost:8080',
         changeOrigin: true,
         secure: false,
-        rewrite: (path) => path.replace(/^\/api/, '')
+        rewrite: (route) => route.replace(/^\/api/, '')
       }
     }
   }
