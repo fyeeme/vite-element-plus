@@ -6,25 +6,29 @@
     |
     <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Documentation</a>
   </p>
+  <el-button icon="el-icon-success" type="primary" @click="state.count++">count is: {{ state.count }}</el-button>
 
-  <button @click="state.count++">count is: {{ state.count }}</button>
   <p>
     Edit
     <code>components/HelloWorld.vue</code> to test hot module replacement.
   </p>
 </template>
 
-<script setup>
-import { defineProps, reactive } from 'vue'
+<script>
+import { reactive } from 'vue'
+export default {
+  props: {
+    msg: {
+      type: String,
+      required: true
+    }
+  },
 
-defineProps({
-  msg: String
-})
-
-const state = reactive({ count: 0 })
-fetch('/api/categories/time-line/code').then((res) => {
-  console.log(res)
-})
+  setup() {
+    const state = reactive({ count: 0 })
+    return { state }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

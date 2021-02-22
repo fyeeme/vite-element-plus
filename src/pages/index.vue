@@ -5,6 +5,17 @@
     <HelloWorld msg="Hello Vue 3 + Vite" />
   </div>
 </template>
-<script setup>
+<script>
+import { useRouter } from 'vue-router'
 import HelloWorld from '../components/HelloWorld.vue'
+
+export default {
+  components: {
+    HelloWorld
+  },
+  setup() {
+    const router = useRouter()
+    console.log(router)
+  }
+}
 </script>
