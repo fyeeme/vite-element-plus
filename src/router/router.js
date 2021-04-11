@@ -1,33 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import routes from 'virtual:generated-pages'
 
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: () => import('@/pages/Index.vue')
-  },
-  {
-    path: '/about',
-    name: 'about',
-    component: () => import('@/pages/About.vue')
-  },
-  {
-    path: '/users',
-    name: 'users',
-    component: () => import('@/pages/users/Index.vue')
-  },
-  {
-    path: '/users/:id',
-    name: 'users-id',
-    component: () => import('@/pages/users/Detail.vue')
-  },
-  {
-    path: '/:catchAll(.*)*',
-    component: () => import('@/pages/NotFound.vue')
-  }
-]
+console.log(routes)
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
 })
 export default router

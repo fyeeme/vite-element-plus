@@ -2,21 +2,24 @@
   "name": "vite-project",
   "version": "0.0.1",
   "scripts": {
-    "dev": "vite",
+    "serve": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "preview": "vite preview",
+    "publish": "vite build &&  rsync -rvhe ssh dist root@47.99.45.135:/var/www/tym-web"
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "dayjs": "^1.10.4",
     "element-plus": "^1.0.2-beta.32",
+    "video.js": "^7.11.4",
     "vue": "^3.0.5",
     "vue-router": "^4.0.4"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^1.1.4",
+    "@vitejs/plugin-vue": "^1.2.1",
     "@vue/compiler-sfc": "^3.0.5",
     "sass": "^1.32.8",
     "vite": "^2.0.1",
-    "vite-plugin-voie": "^0.7.3"
+    "vite-plugin-pages": "^0.9.3"
   }
 }

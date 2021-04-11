@@ -10,28 +10,28 @@
   </div>
 </template>
 <script>
-import { ref } from 'vue'
-import { contentApi } from '../../api/cms'
-export default {
-  setup() {
-    let content = ref({})
-    const getData = () => {
-      contentApi.get(1).then((res) => {
-        content.value = res.data
-        console.log(content)
-      })
-    }
-    const createData = () => {
-      contentApi.create({ name: 'vite' }).then(
-        (res) => {
-          console.log('access is allowed!')
-        },
-        (err) => {
-          console.warn('access is denied')
-        }
-      )
-    }
-    return { content, createData, getData }
+  import { ref } from 'vue'
+  import { contentApi } from '@/api/cms'
+  export default {
+    setup() {
+      let content = ref({})
+      const getData = () => {
+        contentApi.get(1).then((res) => {
+          content.value = res.data
+          console.log(content)
+        })
+      }
+      const createData = () => {
+        contentApi.create({ name: 'vite' }).then(
+          (res) => {
+            console.log('access is allowed!')
+          },
+          (err) => {
+            console.warn('access is denied')
+          }
+        )
+      }
+      return { content, createData, getData }
+    },
   }
-}
 </script>

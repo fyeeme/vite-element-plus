@@ -4,6 +4,6 @@ This starter template also includes:
 
 - [Vue Router 4.x](https://github.com/vuejs/vue-router-next)
 - [elementPlus 1.x](https://github.com/element-plus/element-plus)
-- [axios 0.2x](https://github.com/axios/axios)
+- [axios 0.21.x](https://github.com/axios/axios)
 
 api modules based on axios and vue-router

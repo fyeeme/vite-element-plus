@@ -5,6 +5,4 @@ import ElementPlus from './plugins/element-plus'
 
 import './assets/style/main.scss'
 
-const app = createApp(App)
-
-app.use(router).use(ElementPlus).mount('#app')
+createApp(App).use(router).use(ElementPlus).mount('#app')

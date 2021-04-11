@@ -1,24 +1,19 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import path from 'path'
+import Pages from 'vite-plugin-pages'
+import { resolve } from 'path'
+
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), Pages()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '/src')
-    }
+      '@': resolve(__dirname, './src'),
+      '@assets': resolve(__dirname, './src/assets'),
+      '@components': resolve(__dirname, './src/components'),
+      '@pages': resolve(__dirname, './src/pages'),
+      '@store': resolve(__dirname, './src/store'),
+      '@utils': resolve(__dirname, './src/utils'),
+    },
   },
-  //https://vitejs.dev/config/#server-proxy
-  server: {
-    proxy: {
-      // with options
-      '/api': {
-        target: 'http://localhost:8080',
-        changeOrigin: true,
-        secure: false,
-        rewrite: (route) => route.replace(/^\/api/, '')
-      }
-    }
-  }
 })
