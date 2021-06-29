@@ -4,6 +4,29 @@
     <img alt="Vue logo" src="@/assets/img/logo.png" />
     <HelloWorld msg="Hello Vue 3 + Vite" />
   </div>
+
+  <div class="grid grid-cols-6 gap-4">
+    <div class="w-full h-52 bg-purple-600">1</div>
+    <div class="w-full h-52 bg-purple-600">9</div>
+    <div class="w-full h-52 bg-purple-600">9</div>
+    <div class="w-full h-52 bg-purple-600">1</div>
+    <div class="w-full h-52 bg-purple-600">9</div>
+    <div class="w-full h-52 bg-purple-600">9</div>
+
+    <div class="w-full h-52 bg-purple-600">1</div>
+    <div class="w-full h-52 bg-purple-600">9</div>
+    <div class="w-full h-52 bg-purple-600">9</div>
+    <div class="w-full h-52 bg-purple-600">1</div>
+    <div class="w-full h-52 bg-purple-600">9</div>
+    <div class="w-full h-52 bg-purple-600">9</div>
+
+    <div class="w-full h-52 bg-purple-600">1</div>
+    <div class="w-full h-52 bg-purple-600">9</div>
+    <div class="w-full h-52 bg-purple-600">9</div>
+    <div class="w-full h-52 bg-purple-600">1</div>
+    <div class="w-full h-52 bg-purple-600">9</div>
+    <div class="w-full h-52 bg-purple-600">9</div>
+  </div>
 </template>
 <script>
   import { useRouter } from 'vue-router'

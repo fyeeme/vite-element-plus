@@ -11,3 +11,8 @@ html {
   max-width: 1120px;
   margin: 0 auto;
 }
+
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
