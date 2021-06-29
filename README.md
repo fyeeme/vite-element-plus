@@ -7,3 +7,20 @@ This starter template also includes:
 - [axios 0.21.x](https://github.com/axios/axios)
 
 api modules based on axios and vue-router
+
+
+
+Broken install binary on macOS #462
+
+% cat node_modules/esbuild/bin/esbuild
+#!/usr/bin/env node
+throw new Error(`esbuild: Failed to install correctly`);
+
+
+
+```shell
+npm i
+node node_modules/esbuild/install.js
+
+npm run dev
+```
