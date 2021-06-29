@@ -14,7 +14,7 @@ axios.interceptors.response.use(
       setTimeout(() => {
         router.push({
           name: 'about',
-          params: { redirect: router.currentRoute.fullPath }
+          params: { redirect: router.currentRoute.fullPath },
         })
       }, 1000)
       console.log('Requested url rejected: ')
@@ -23,7 +23,6 @@ axios.interceptors.response.use(
     }
   }
 )
-const del = axios.delete
-const { get, post, put } = axios
+const api = axios
 
-export { get, post, put, del }
+export { api, axios }

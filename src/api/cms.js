@@ -1,6 +1,6 @@
-import { get, post } from '@/plugins/api'
+import { api } from '@/plugins/api'
 
 export const contentApi = {
-  create: (obj) => post('/api/contents', obj),
-  get: (id) => get(`/api/contents/${id}`),
+  create: (obj) => api.post('/api/contents', obj),
+  get: (id) => api.get(`/api/contents/${id}`),
 }
