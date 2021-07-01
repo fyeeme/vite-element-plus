@@ -12,23 +12,27 @@
   </div>
 </template>
 
-<script setup>
+<script>
   import { ref } from '@vue/reactivity'
-  import { defineEmit, defineProps } from '@vue/runtime-core'
-
-  const props = defineProps({
-    placeholder: {
-      type: String,
-      default: 'name',
+  export default {
+    props: {
+      placeholder: {
+        type: String,
+        default: 'name',
+      },
     },
-  })
-  const emit = defineEmit(['search'])
-  const name = ref(null)
-  const onSubmit = () => {
-    emit('search', name.value)
+    emits: ['search'],
+    setup(props, context) {
+      const name = ref(null)
+      const onSubmit = () => {
+        context.emit('search', name.value)
+      }
+      return {
+        name,
+        onSubmit,
+      }
+    },
   }
-
-  
 </script>
 
 <style lang="scss" scoped></style>

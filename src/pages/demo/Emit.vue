@@ -1,5 +1,7 @@
 <template>
-  <SearchBar @search="onSearch" placeholder="请输入名称" />
+  <div class="p-md">
+    <SearchBar @search="onSearch" placeholder="请输入名称" />
+  </div>
 </template>
 
 <script>
