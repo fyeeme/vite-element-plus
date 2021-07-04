@@ -4,12 +4,12 @@
   <router-link to="/">Back to home page</router-link>
 </template>
 <script>
-export default {
-  props: {
-    all: {
-      type: String,
-      required: true
-    }
+  export default {
+    props: {
+      all: {
+        type: String,
+        required: true,
+      },
+    },
   }
-}
 </script>

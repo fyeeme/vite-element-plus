@@ -4,8 +4,7 @@
   "scripts": {
     "serve": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "publish": "vite build &&  rsync -rvhe ssh dist root@47.99.45.135:/var/www/tym-web"
+    "preview": "vite preview"
   },
   "dependencies": {
     "axios": "^0.21.1",
