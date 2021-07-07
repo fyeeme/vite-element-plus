@@ -1,20 +1,24 @@
 <template>
   <div>
     <input
-      class="w-20 border border-black mr-2 rounded"
+      class="border border-black mr-2 rounded"
       type="text"
       :placeholder="placeholder"
       v-model="name"
     />
-    <button class="rounded text-gray-400 border border-black text-sm px-4 py-1" @click="onSubmit">
-      查询
+    <button
+      class="rounded text-gray-400 border bg-purple-100 border-black text-md px-6 py-2"
+      @click="onSubmit"
+    >
+      <icon-mdi-light-arrow-down-circle />查询
+      <icon-mdi-format-line-weight class="text-yellow-700 text-xl" />
     </button>
   </div>
 </template>
 
 <script setup>
   import { ref } from '@vue/reactivity'
-  import { defineEmit, defineProps } from '@vue/runtime-core'
+  import { defineEmits, defineProps } from '@vue/runtime-core'
 
   const props = defineProps({
     placeholder: {
@@ -22,13 +26,11 @@
       default: 'name',
     },
   })
-  const emit = defineEmit(['search'])
+  const emit = defineEmits(['search'])
   const name = ref(null)
   const onSubmit = () => {
     emit('search', name.value)
   }
-
-  
 </script>
 
 <style lang="scss" scoped></style>

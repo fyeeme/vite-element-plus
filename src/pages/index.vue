@@ -5,7 +5,7 @@
     <HelloWorld msg="Hello Vue 3 + Vite" />
     <button class="btn">submit</button>
 
-    <input type="text" class="form-item" size="md" />
+    <input type="text" class="form-item" />
     <div class="grid grid-cols-2 gap-4 w-200 mx-auto">
       <div class="w-full h-52 bg-purple-600 p-md text-gray-200">1</div>
       <div class="w-full h-52 bg-purple-600">9</div>

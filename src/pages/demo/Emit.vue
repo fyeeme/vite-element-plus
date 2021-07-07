@@ -5,12 +5,12 @@
 </template>
 
 <script>
-  import SearchBar from '@/components/SearchBar.vue'
+  // import SearchBar from '@/components/SearchBar.1.vue'
 
   export default {
-    components: {
-      SearchBar,
-    },
+    // components: {
+    //   SearchBar,
+    // },
     setup() {
       const onSearch = (e) => {
         console.log(e)
@@ -23,3 +23,7 @@
 </script>
 
 <style lang="scss" scoped></style>
+<route lang="yaml">
+meta:
+  layout: home
+</route>

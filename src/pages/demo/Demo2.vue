@@ -1,5 +1,5 @@
 <template>
-  <div> </div>
+  <div class="p-md">hello</div>
 </template>
 
 <script>

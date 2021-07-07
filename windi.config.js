@@ -16,4 +16,5 @@ export default {
       auto: 'auto',
     },
   },
+  plugins: [require('windicss/plugin/forms')],
 }

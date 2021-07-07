@@ -25,3 +25,6 @@ node node_modules/esbuild/install.js
 
 npm run dev
 ```
+
+### use icon 
+https://github.com/antfu/vite-plugin-icons

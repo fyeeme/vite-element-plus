@@ -1,12 +1,25 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
+import Layouts from 'vite-plugin-vue-layouts'
 import WindiCSS from 'vite-plugin-windicss'
-
+import ViteComponents from 'vite-plugin-components'
+import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
 import { resolve } from 'path'
 
 export default defineConfig({
-  plugins: [vue(), Pages(), WindiCSS()],
+  plugins: [
+    vue(),
+    Pages(),
+    Layouts(),
+    WindiCSS(),
+    ViteComponents({
+      customComponentResolvers: ViteIconsResolver({
+        componentPrefix: 'icon',
+      }),
+    }),
+    ViteIcons(),
+  ],
   resolve: {
     alias: {
       src: resolve(__dirname, './src'),
@@ -22,14 +35,12 @@ export default defineConfig({
     https: false,
     port: 8083,
     compress: true,
-    open: false, // opens browser window automatically
     proxy: {
-      // with options
       '/api': {
         target: 'http://localhost:8090',
         changeOrigin: true,
         secure: false,
-        pathRewrite: { '^/api': '' },
+        rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
   },
