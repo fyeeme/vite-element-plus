@@ -5,7 +5,7 @@ console.log(router)
 // 响应拦截
 axios.interceptors.response.use(
   (res) => {
-    return res
+    return res.data
   },
   (err) => {
     console.log(router)
