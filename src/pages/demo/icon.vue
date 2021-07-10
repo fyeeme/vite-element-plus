@@ -1,6 +1,7 @@
 <template>
   <div>
     <div>Registration closes in <span id="time">0000</span> minutes!</div>
+    <icon-mdi-emoticon-devil />
   </div>
 </template>
 

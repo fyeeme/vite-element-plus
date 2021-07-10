@@ -1,4 +1,4 @@
-## `Vite 2.x + Vue 3.x + elementPlus 1.x starter ⚡`
+## `Vite 2.x + Vue 3.x + windicss 1.x starter ⚡`
 
 1. This starter template also includes:
 
@@ -10,8 +10,6 @@
 
 3. why use windicss not tailwindcss 
    1. https://github.com/windicss/windicss/discussions/176
-
-
 
 ## FAQ
 
@@ -30,14 +28,15 @@ npm run dev
 https://github.com/antfu/vite-plugin-icons
 https://github.com/antfu/vitesse
 
-Windi CSS 
-Components auto importing
-File based routing
-Use icons from any icon sets, with no compromise
-  https://xy-ui.codelabo.cn/
-Use the new <script setup> style
+1.  Windi CSS 
+2. Components auto importing
+3. File based routing
+4. Use icons from any icon sets, with no compromise
+  {prefix}-{collection}-{icon}
+  The collection field follows [Iconify's collection IDs.](https://iconify.design/icon-sets/)
 
-
+vue
+<!-- Use the new <script setup> style -->
 
 
 ### 高亮 `<route>`
