@@ -1,8 +1,7 @@
 import router from 'src/router'
 import axios from 'axios'
 
-import errorMsgs from '@/lang/lang.js'
-import { Notify } from 'quasar'
+// import errorMsgs from '@/lang/lang.js'
 
 const parseError = (result) => {
   console.log('parseError', result)
@@ -16,15 +15,16 @@ const parseError = (result) => {
     }, 1000)
     console.warning('Requested url rejected: ')
   } else {
-    Notify.create({
-      type: 'warning',
-      position: 'top',
-      message:
-        errorMsgs[result.message] || errorMsgs[result.code] || errorMsgs['defaultErrorMessage'],
-    })
+    // Notify.create({
+    //   type: 'warning',
+    //   position: 'top',
+    //   message:
+    //     errorMsgs[result.message] || errorMsgs[result.code] || errorMsgs['defaultErrorMessage'],
+    // })
   }
 }
-axios.interceptors.request.use((req) => {
+const api = axios.create({})
+api.interceptors.request.use((req) => {
   const accessToken = localStorage.getItem('User/getAccessToken') || {}
   if (accessToken.tokenValue) {
     req.headers.Authorization = 'Bearer ' + accessToken.tokenValue
@@ -32,7 +32,8 @@ axios.interceptors.request.use((req) => {
   return req
 })
 // 响应拦截
-axios.interceptors.response.use(
+
+api.interceptors.response.use(
   (res) => {
     let result = res.data || {}
     if (result.status === 'fail') {
@@ -47,6 +48,5 @@ axios.interceptors.response.use(
     return Promise.reject(result)
   }
 )
-const api = axios
 
 export { api, axios }
